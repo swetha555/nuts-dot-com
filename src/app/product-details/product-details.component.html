@@ -1,3 +1,13 @@
-<p>
-  product-details works!
-</p>
+<div *ngIf="selectedItem">
+ 
+    <div class="card mb-3 card-size" (click)="viewDetails(product)">
+        <img class="card-img-top" src="{{selectedItem.masterData.current.masterVariant.images[0].url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{selectedItem.masterData.current.name.en | uppercase}} <span *ngIf="organicBadge" class="badge badge-light"><img class="card-img-top" src="../../assets/5e85d71501308335-L2AE6hCf-thumb.jpg" alt="Card image cap">
+          </span></h5>
+          <p class="card-text">{{selectedItem.masterData.current.description.en}}</p>
+          <p class="card-text"><small class="text-muted">{{unitPrice}}<span>   {{currencyCode}}</span></small></p>
+          <button class="btn btn-primary" (click)="navigate('PREV')">Go back to List</button> 
+        </div>
+      </div>    
+  </div>

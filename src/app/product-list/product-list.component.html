@@ -1,10 +1,10 @@
-<p>
-  product-list works!
-</p>
-<div *ngFor="let product of productList">
-<ul>
-  <li (click)="viewDetails(product)"><span>{{product.name | uppercase}}</span></li>
-  <li>{{product.description}}</li>
 
-</ul>
-</div>
+    <div *ngFor="let product of productList" id="product-list" class="list-component">
+
+      <div class="card mb-3 card-size" (click)="viewDetails(product)">
+        <img class="card-img-top" src="{{product.masterData.current.masterVariant.images[0].url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{product.masterData.current.name.en | uppercase}}</h5>
+        </div>
+      </div>
+    </div>
